@@ -6,6 +6,7 @@ Snake_Game::Snake_Game(QWidget *parent) :
     ui(new Ui::Snake_Game)
 {
     ui->setupUi(this);
+    this->setFixedSize(700,700);
 }
 
 Snake_Game::~Snake_Game()
