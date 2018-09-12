@@ -1,12 +1,21 @@
 #ifndef PIXEL_H
 #define PIXEL_H
 
+#include <QMainWindow>
+#include<QWidget>
 
-class Pixel
+
+class Pixel : public QWidget
 {
 public:
-    Pixel();
-    Pixel* next;
+
+    Pixel(int x,int y);
+    void set_pos(int x , int y);
+    void set_colour_black();
+    void set_colour_red();
+    int get_x();
+    int get_y();
 };
 
 #endif // PIXEL_H
+
