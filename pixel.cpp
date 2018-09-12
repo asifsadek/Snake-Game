@@ -16,6 +16,11 @@ void Pixel::set_colour_black()
     this->setStyleSheet("background-color:black;");
     this->show();
 }
+void Pixel::set_colour_white()
+{
+    this->setStyleSheet("background-color:white;");
+    this->show();
+}
 void Pixel::set_colour_red()
 {
     this->setStyleSheet("background-color:red;");

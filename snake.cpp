@@ -2,21 +2,35 @@
 
 Snake::Snake()
 {
-    head=new Pixel();
-    tail=new Pixel();
+    head=new Pixel(10,10);
+    tail=new Pixel(20,10);
     tail->next=head;
     length = 2;
-
+    direction=Right;
 
 }
 
-bool Snake::move() {
-    Pixel* temp=new Pixel();
+void Snake::move() {
+    Pixel* temp;
     temp = this->tail;
-    //set temp color to white
+    temp->set_colour_white();
     this->tail = temp->next;
     //assign new head position
-    //call draw snake from box object
-    return false;
+    switch(direction) {
+    case 0:
+        this->head->set_pos(head->get_x(),head->get_y()-10);
+        break;
+    case 1:
+        this->head->set_pos(head->get_x()+10,head->get_y());
+        break;
+    case 2:
+        this->head->set_pos(head->get_x(),head->get_y()+10);
+        break;
+    case 3:
+        this->head->set_pos(head->get_x()-10,head->get_y());
+        break;
+    }
 }
+
+
 

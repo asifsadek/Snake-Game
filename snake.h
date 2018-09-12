@@ -8,11 +8,15 @@ class Snake
 {
 
 public:
+    enum Direction {
+      Up,Right,Down,Left
+    };
+    Direction direction;
     Pixel* head;
     Pixel* tail;
     int length;
     Snake();
-    bool move();
+    void move();
 };
 
 #endif // SNAKE_H
