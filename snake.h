@@ -25,6 +25,8 @@ public:
     void draw();
     QPainter* s_painter;
     void keyPressEvent(QKeyEvent* event);
+    void whitedraw();
+    void blackdraw();
 
 
 };
