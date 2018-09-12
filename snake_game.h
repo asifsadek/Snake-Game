@@ -3,7 +3,11 @@
 
 #include <QMainWindow>
 #include <pixel.h>
-
+#include <snake.h>
+#include <QPainter>
+#include <QPaintEvent>
+#include <QRect>
+#include <QBrush>
 
 namespace Ui {
 class Snake_Game;
@@ -16,6 +20,13 @@ class Snake_Game : public QMainWindow
 public:
     explicit Snake_Game(QWidget *parent = nullptr);
     ~Snake_Game();
+    void paintEvent(QPaintEvent * event)
+        {
+            QMainWindow::paintEvent(event);
+
+            QPainter* painter = new QPainter(this);
+            Snake snake(painter);
+       }
 
 private:
     Ui::Snake_Game *ui;
