@@ -8,15 +8,13 @@ class Snake
 {
 
 public:
-    enum Direction {
-      Up,Right,Down,Left
-    };
-    Direction direction;
+
     Pixel* head;
     Pixel* tail;
     int length;
     Snake();
-    void move();
+    void keyPressEvent(QKeyEvent* event);
+
 };
 
 #endif // SNAKE_H
