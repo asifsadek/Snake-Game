@@ -42,10 +42,10 @@ void Snake::move() {
 
 void Snake::draw() {
     s_painter->fillRect(0,0,700,700,WHITE_BRUSH);
-    s_painter->fillRect(head->x,head->y,10,10,BLACK_BRUSH);
-    s_painter->fillRect(tail->x,tail->y,10,10,BLACK_BRUSH);
+    
 }
-
+void Snake :: whitedraw(){s_painter->fillRect(tail->x,tail->y,10,10,WHITE_BRUSH);}
+void Snake :: blackdraw() {s_painter->fillRect(head->x,head->y,10,10,BLACK_BRUSH);}
 void Snake :: keyPressEvent(QKeyEvent *event){
     Pixel* temp;
     temp = this->tail;
