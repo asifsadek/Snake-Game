@@ -1,4 +1,5 @@
 #include "snake.h"
+#include <QKeyEvent>
 
 Snake::Snake()
 {
@@ -10,25 +11,23 @@ Snake::Snake()
 
 }
 
-void Snake::move() {
+void Snake::keyPressEvent(QKeyEvent *event){
     Pixel* temp;
     temp = this->tail;
     temp->set_colour_white();
     this->tail = temp->next;
     //assign new head position
-    switch(direction) {
-    case 0:
+    if (event->key() == Qt::Key_Down){
         this->head->set_pos(head->get_x(),head->get_y()-10);
-        break;
-    case 1:
+    }
+    if (event->key() == Qt::Key_Right){
         this->head->set_pos(head->get_x()+10,head->get_y());
-        break;
-    case 2:
+    }
+    if (event->key() == Qt::Key_Up){
         this->head->set_pos(head->get_x(),head->get_y()+10);
-        break;
-    case 3:
+    }
+    if (event->key() == Qt::Key_Left){
         this->head->set_pos(head->get_x()-10,head->get_y());
-        break;
     }
 }
 
