@@ -2,6 +2,8 @@
 #define SNAKE_GAME_H
 
 #include <QMainWindow>
+#include <pixel.h>
+
 
 namespace Ui {
 class Snake_Game;
